@@ -1,0 +1,167 @@
+// СБРОС КАСТОМНЫХ СТИЛЕЙ
+@mixin title-reset {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin link-reset {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin button-reset {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: inherit;
+}
+
+// меньше 1838 для слайдера
+@mixin slider-desktop {
+  @media (max-width: 1838px) {
+    @content;
+  }
+}
+
+@mixin tickets-table {
+  @media (max-width: 643px) {
+    @content;
+  }
+}
+
+@mixin desktop-big {
+  @media (max-width: 1439px) {
+    @content;
+  }
+}
+
+// меньше 1280
+@mixin desktop-lg {
+  @media (max-width: $width-desktop-lg - 1px) {
+    @content;
+  }
+}
+
+// меньше 1024
+@mixin tablet {
+  @media (max-width: $width-desktop - 1px) {
+    @content;
+  }
+}
+
+// меньше 768
+@mixin mobile {
+  @media (max-width: $width-tablet - 1px) {
+    @content;
+  }
+}
+
+// меньше 1024 и переворот экрана
+@mixin mobileLand {
+  @media (max-width: $width-desktop - 1px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+// РЕТИНА
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+// Шрифты
+@mixin font-h1 {
+  font-family: "Playfair", "Arial", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 72px;
+  line-height: 110%;
+  letter-spacing: 0.03em;
+
+  @include tablet {
+    font-size: 56px;
+    letter-spacing: 0.03em;
+  }
+
+  @include mobile {
+    font-size: 32px;
+    line-height: 126.64%;
+  }
+}
+
+@mixin font-h2 {
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 48px;
+
+  @include tablet {
+    font-size: 32px;
+    line-height: 120%;
+  }
+
+  @include mobile {
+    font-size: 24px;
+  }
+
+  @include mobileLand {
+    font-size: 33px;
+    line-height: 120%;
+  }
+}
+
+@mixin font-h3 {
+  font-family: "Playfair", "Arial", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 110%;
+  letter-spacing: 0.03em;
+
+  @include mobile {
+    font-size: 28px;
+  }
+
+  @include mobileLand {
+    font-size: 28px;
+  }
+}
+
+@mixin font-h4 {
+  font-family: "Playfair", "Arial", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 110%;
+  letter-spacing: 0.03em;
+
+  @include mobile {
+    font-size: 21px;
+  }
+
+  @include mobileLand {
+    font-size: 21px;
+  }
+}
+
+@mixin font-p {
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 150%;
+}

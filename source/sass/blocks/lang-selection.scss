@@ -1,0 +1,248 @@
+.lang-selection {
+  position: relative;
+  width: 43px;
+  height: 24px;
+  margin-top: 8px;
+}
+
+.lang-selection__title {
+  @include button-reset;
+
+  display: block;
+  position: relative;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: $white;
+  text-align: right;
+  transition: color $transition;
+
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 9px;
+    height: 6px;
+    top: 50%;
+    right: -13px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../img/triangle-white.svg");
+    transform: translateY(-50%) rotate(0);
+  }
+
+  &:hover {
+    color: $saffron;
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.main-header--scroll .lang-selection__title::after {
+  background-image: url("../img/triangle-black.svg");
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.main-header--scroll .lang-selection__title {
+  color: $shaft-black;
+
+  &:hover {
+    color: $saffron;
+  }
+}
+
+.lang-selection--open .lang-selection__title::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.main-header--scroll .lang-selection--open .lang-selection__title::after {
+  transform: translateY(-50%) rotate(0);
+}
+
+.lang-selection__list {
+  @include list-reset;
+
+  display: none;
+  position: absolute;
+  width: 114px;
+  height: 92px;
+  top: 27px;
+  right: -2px;
+  flex-direction: column;
+  align-items: center;
+  background: $white;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  transition: transform $transition;
+
+  @include tablet {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    box-shadow: none;
+    top: auto;
+    right: auto;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    transform: none;
+  }
+}
+
+.lang-selection--open .lang-selection__list {
+  display: flex;
+}
+
+.lang-selection__item {
+  width: 100%;
+  border: 1px solid rgba(48, 48, 48, 0.1);
+  padding-top: 19px;
+  padding-bottom: 10px;
+  padding-right: 25px;
+
+  &:last-child {
+    border: none;
+    padding-top: 13px;
+    padding-bottom: 16px;
+
+    @include tablet {
+      margin-right: 0;
+      padding: 0;
+    }
+  }
+
+  @include tablet {
+    width: 40%;
+    padding: 0;
+    margin-right: 10px;
+    border: none;
+    position: relative;
+
+    &::after {
+      display: block;
+      content: "/";
+      font-size: 16px;
+      line-height: 19px;
+      color: $white;
+      font-weight: 600;
+      position: absolute;
+      right: -4px;
+      top: -1px;
+      opacity: 0.5;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+}
+
+.lang-selection__item input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.lang-selection__item label {
+  position: relative;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  padding-left: 51px;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: -0.02em;
+  color: $shaft-black;
+  text-transform: uppercase;
+  transition: color $transition;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 26px;
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: filter $transition;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 9px;
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    padding: 0;
+    font-size: 16px;
+    line-height: 19px;
+    color: $white;
+    font-weight: 600;
+    opacity: 0.5;
+  }
+
+  &:hover {
+    color: $purple;
+
+    @include tablet {
+      color: $white;
+    }
+  }
+
+  &:hover::before {
+    filter: drop-shadow(0 0 3px $purple);
+
+    @include tablet {
+      filter: none;
+    }
+  }
+}
+
+label[for="rus"]::before {
+  background-image: url("../img/flag_ru.svg");
+}
+
+label[for="en"]::before {
+  background-image: url("../img/flag_us.svg");
+}
+
+.lang-selection__item input:checked + label::after {
+  background-image: url("../img/mark-lang.svg");
+}
+
+.lang-selection__item input:checked + label {
+  @include tablet {
+    opacity: 1;
+  }
+}

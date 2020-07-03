@@ -1,0 +1,37 @@
+// РАЗРЕШЕНИЯ
+$max-width: 1920px;
+$width-desktop-lg: 1280px;
+$width-desktop: 1024px;
+$width-tablet: 768px;
+$width-mobile: 320px;
+
+// РЕТИНА
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
+
+// ЦВЕТА
+$shaft-black: #303030;
+$brown: #1c1515;
+$black: #000000;
+$white: #ffffff;
+$chablis-white: #fff5f5;
+$saffron: #f2c03f;
+$hashtag-saffron: #f7bf2f;
+$light-gray: #f4f4f4;
+$high-light-gray: #d0d7dd;
+$gray: #b5b5b5;
+$gray-toggle: #cdcdcd;
+$purple: #7965ad;
+$blue: #0c4ffc;
+$gray-blue: #323c47;
+$red: #ff0000;
+
+// скорость анимации элементов
+$transition: 0.3s ease;
+$fast-transition: 0.1s ease;
+
+// общий паддинг слева
+$padding-left: 40px;
+
+//высота закрытого хедера
+$header-tablet-height: 92px;

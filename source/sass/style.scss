@@ -1,0 +1,41 @@
+// vendor
+@import "vendor/normalize.scss";
+@import "vendor/swiper.scss";
+
+// global
+@import "general/fonts.scss";
+@import "general/variables.scss";
+@import "general/mixins.scss";
+@import "general/global.scss";
+
+// blocks
+@import "blocks/number.scss";
+@import "blocks/toggles.scss";
+@import "blocks/main-nav.scss";
+@import "blocks/social-list.scss";
+@import "blocks/hashtag.scss";
+@import "blocks/lang-selection.scss";
+@import "blocks/main-header.scss";
+@import "blocks/preview.scss";
+@import "blocks/preview-info.scss";
+
+// слайдеры
+@import "blocks/slider-toggle";
+@import "blocks/model.scss";
+@import "blocks/judge.scss";
+@import "blocks/slider.scss";
+
+// билеты
+@import "blocks/rate";
+@import "blocks/payments";
+@import "blocks/button-buy";
+@import "blocks/tickets-table";
+@import "blocks/tickets";
+
+// попапы
+@import "blocks/btn-small";
+@import "blocks/overlay";
+@import "blocks/popup";
+@import "blocks/feedback";
+@import "blocks/form";
+@import "blocks/contacts";

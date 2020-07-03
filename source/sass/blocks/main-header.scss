@@ -1,0 +1,365 @@
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  transition: background $fast-transition;
+  background: $purple;
+
+  &--scroll {
+    background-color: $white;
+  }
+
+  @include tablet {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: $header-tablet-height;
+
+    &--opened {
+      height: 100vh;
+      overflow-y: scroll;
+    }
+  }
+
+  @include mobile {
+    position: absolute;
+    background: transparent;
+  }
+}
+
+.main-header__container {
+  max-width: $max-width;
+  display: flex;
+  align-items: center;
+  padding-left: $padding-left;
+  padding-right: 4.2%;
+  margin: 0 auto;
+
+  @include desktop-lg {
+    padding-right: 30px;
+  }
+
+  @include tablet {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+
+  @include mobile {
+    padding-top: 22px;
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+}
+
+.nojs .main-header {
+  min-height: auto;
+  position: absolute;
+  transform: none;
+  left: auto;
+
+  @include tablet {
+    position: static;
+    height: auto;
+    min-height: 100vh;
+    max-height: none;
+    background: url("../img/main-overlay.svg"), linear-gradient(137deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
+    background-repeat: no-repeat;
+    background-size: 920px 504px, 100% 100%;
+    background-position: top 23% left -12px, top left;
+    padding-bottom: 10px;
+  }
+
+  @include mobile {
+    background-size: 400px 219px, 100% 100%;
+  }
+}
+
+.main-header__title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: auto;
+
+  @include tablet {
+    order: 0;
+    position: absolute;
+    top: 0;
+    left: 24px;
+    z-index: 1;
+  }
+
+  @include mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.main-header__logo {
+  width: 260px;
+  height: 145px;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include tablet {
+    width: 138px;
+    height: 92px;
+  }
+
+  @include mobile {
+    width: 108px;
+    height: 72px;
+  }
+}
+
+.main-header__logo img {
+  max-width: 77%;
+}
+
+.main-header__hashtag {
+  display: block;
+  opacity: 0;
+  transform: translate(-17px, 16px);
+
+  @include desktop-lg {
+    display: none;
+  }
+
+  @include tablet {
+    opacity: 0;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.main-header--scroll .main-header__hashtag {
+  opacity: 1;
+
+  @include tablet {
+    opacity: 1;
+    transform: translate(0, 10px);
+  }
+}
+
+.main-header__wrapper {
+  margin-left: 20px;
+  width: 903px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  @include desktop-lg {
+    width: 835px;
+    margin-left: 3px;
+  }
+
+  @include tablet {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    background: url("../img/main-overlay.svg"), linear-gradient(137deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
+    background-color: $white;
+    background-repeat: no-repeat;
+    background-size: 920px 504px, 100% 100%;
+    background-position: top 23% left -12px, top left;
+    transition: transform $transition;
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-bottom: 74px;
+    margin: 0;
+  }
+
+  @include mobile {
+    background: url("../img/main-overlay.svg"), linear-gradient(105.85deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
+    background-size: 400px 219px, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: top 19% left -35px, center;
+    padding-bottom: 72px;
+    background-color: $white;
+  }
+}
+
+.main-header--opened .main-header__wrapper {
+  @include tablet {
+    display: flex;
+    transform: translateX(100%);
+    min-height: 100vh;
+  }
+}
+
+.nojs .main-header__wrapper {
+  position: static;
+}
+
+.main-header__main-nav {
+  width: 82%;
+  padding-top: 6px;
+  margin-right: 12%;
+
+  @include desktop-big {
+    margin-right: 4%;
+    width: 90%;
+  }
+
+  @include desktop-lg {
+    width: 93%;
+    margin-right: 0.5%;
+  }
+
+  @include tablet {
+    width: 100%;
+    padding: 0;
+    margin: 0 0 79px 0;
+    order: 1;
+  }
+
+  @include mobile {
+    margin-bottom: 56px;
+  }
+}
+
+.main-header__social-list {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    width: auto;
+    order: 2;
+  }
+}
+
+.main-header__lang-selection {
+  @include tablet {
+    order: 0;
+    width: 90px;
+    margin: 44px 97px 50px auto;
+  }
+
+  @include tablet {
+    margin: 44px 92px 50px auto;
+  }
+
+  @include mobile {
+    margin: 25px 68px 40px auto;
+  }
+}
+
+.main-header__btn {
+  @include button-reset;
+
+  display: none;
+  position: absolute;
+  right: 49px;
+  top: 40px;
+  width: 28px;
+  height: 28px;
+  overflow: hidden;
+  transition: opacity $transition;
+  z-index: 1;
+
+  &:active {
+    opacity: 0.4;
+  }
+
+  @include tablet {
+    display: block;
+    right: 49px;
+  }
+
+  @include mobile {
+    right: 24px;
+    top: 22px;
+  }
+}
+
+.nojs .main-header__btn {
+  display: none;
+}
+
+.main-header__btn span {
+  width: 28px;
+  height: 3px;
+  background-color: $white;
+  position: absolute;
+  right: 0;
+  border-radius: 3px;
+  transition: background $transition, transform $transition;
+
+  &:first-child {
+    top: 5.5px;
+  }
+
+  &:nth-child(2) {
+    top: 50%;
+    margin-top: -1.5px;
+    width: 19px;
+    transition: background $transition, transform $fast-transition;
+  }
+
+  &:last-child {
+    bottom: 5.5px;
+  }
+}
+
+.main-header--scroll .main-header__btn span {
+  background-color: $purple;
+}
+
+.main-header__btn:hover span,
+.main-header__btn:focus span {
+  background-color: $saffron;
+
+  @include tablet {
+    background-color: $white;
+  }
+}
+
+.main-header--scroll .main-header__btn:hover span,
+.main-header--scroll .main-header__btn:focus span {
+  background-color: $saffron;
+
+  @include tablet {
+    background-color: $purple;
+  }
+}
+
+.main-header--opened .main-header__btn span {
+  &:first-child {
+    transform: translateY(7px) rotate(45deg);
+    background-color: $white;
+  }
+
+  &:nth-child(2) {
+    transform: translateX(100%);
+    background-color: $white;
+  }
+
+  &:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+    background-color: $white;
+  }
+}
+
+.main-header--scroll .main-nav__link {
+  color: $shaft-black;
+}
+
+.main-header--scroll.main-header--opened .main-nav__link {
+  color: $white;
+}

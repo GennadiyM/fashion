@@ -1,0 +1,90 @@
+.social-list {
+  @include list-reset;
+
+  width: 300px;
+  min-height: 44px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &--small {
+    width: 105px;
+    min-height: 32px;
+    justify-content: flex-end;
+  }
+}
+
+.social-list__item {
+  margin-right: 25px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.social-list--small .social-list__item {
+  margin-right: 3px;
+}
+
+.social-list__link {
+  @include link-reset;
+
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.32;
+  transition: opacity $fast-transition;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+    outline: none;
+  }
+
+  @include tablet {
+    &:hover,
+    &:focus {
+      opacity: 0.32;
+    }
+  }
+}
+
+.social-list--small .social-list__link {
+  width: 32px;
+  height: 32px;
+}
+
+.social-list svg {
+  fill: $white;
+  transition: fill $fast-transition;
+}
+
+.social-list--small svg {
+  fill: $shaft-black;
+  width: 24px;
+  height: 24px;
+  transition: fill $fast-transition, width $fast-transition, height $fast-transition;
+}
+
+.social-list__link:hover svg,
+.social-list__link:focus svg {
+  fill: $saffron;
+
+  @include tablet {
+    fill: $white;
+  }
+}
+
+.social-list--small .social-list__link:hover svg,
+.social-list--small .social-list__link:focus svg {
+  width: 32px;
+  height: 32px;
+
+  @include tablet {
+    fill: $shaft-black;
+    width: 24px;
+    height: 24px;
+  }
+}

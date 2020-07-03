@@ -1,0 +1,46 @@
+.button-buy {
+  @include link-reset;
+
+  display: block;
+  width: 100%;
+  max-width: 192px;
+  min-width: 120px;
+  height: 49px;
+  background: $white;
+  border: 1px solid $high-light-gray;
+  border-radius: 2px;
+  font-size: 18px;
+  line-height: 49px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $shaft-black;
+  margin: 0 auto;
+  transition: background $transition, border $transition, color $transition, opacity $transition;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  &--purple {
+    background: $purple;
+    border: none;
+    line-height: 51px;
+    color: $white;
+  }
+
+  &:hover,
+  &:focus {
+    color: $white;
+    border-color: $saffron;
+    background: $saffron;
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @include tablet {
+    font-size: 16px;
+    letter-spacing: 0.06em;
+  }
+}

@@ -1,0 +1,161 @@
+.tickets-table {
+  @include list-reset;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: $white;
+}
+
+.tickets-table__tr {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-left: 1px solid $saffron;
+  border-right: 1px solid $saffron;
+  padding-right: 31px;
+
+  &:nth-child(odd) {
+    background-color: rgba(242, 192, 63, 0.1);
+  }
+
+  &:last-child {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $saffron;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    @include mobile {
+      border: 0;
+    }
+  }
+
+  &--without-title {
+    padding-left: 236px;
+
+    @include tablet {
+      padding-left: 272px;
+    }
+
+    @include mobile {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 156px;
+    }
+  }
+
+  @include tablet {
+    padding-right: 40px;
+  }
+
+  @include mobile {
+    border: none;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 0;
+  }
+
+  &--head {
+    border: none;
+    min-height: 47px;
+
+    @include mobile {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.tickets-table__tr--head + .tickets-table__tr {
+  border-top: 1px solid $saffron;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  @include mobile {
+    border: none;
+  }
+}
+
+.tickets-table__tr:nth-child(odd).tickets-table__tr--head {
+  background-color: transparent;
+}
+
+
+.tickets-table__td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 21.18%;
+  margin-right: auto;
+
+  &:last-of-type {
+    margin-right: 0;
+
+    @include mobile {
+      margin-right: 59px;
+    }
+  }
+
+  @include tablet {
+    width: 17%;
+  }
+
+  @include mobile {
+    width: 120px;
+  }
+
+  &--main {
+    width: 236px;
+    padding-left: 32px;
+    margin-right: 0;
+    margin-left: 0;
+
+    @include tablet {
+      width: 272px;
+    }
+
+    @include mobile {
+      width: 142px;
+      padding-left: 15px;
+      margin-right: 14px;
+    }
+  }
+}
+
+.tickets-table__tr--head .tickets-table__td {
+  flex-direction: column;
+}
+
+.tickets-table__tr--without-title .tickets-table__td {
+  width: 28.5%;
+
+  @include mobile {
+    width: 120px;
+  }
+}
+
+.tickets-table__td p {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  line-height: 19px;
+  color: $shaft-black;
+  opacity: 0.87;
+  padding: 0;
+  margin: 0;
+}
+
+.tickets-table__tr--head .tickets-table__td p {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: $gray-blue;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}

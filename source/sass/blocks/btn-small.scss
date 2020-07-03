@@ -1,0 +1,31 @@
+.btn-small {
+  @include button-reset;
+
+  display: block;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: $white;
+  border: 1px solid $high-light-gray;
+  border-radius: 2px;
+  padding: 13px 48px 14px;
+  transition: background $transition, border $transition, color $transition, opacity &transition;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    border-color: $saffron;
+    background: $saffron;
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &--short {
+    padding: 14px 40px 15px;
+  }
+}

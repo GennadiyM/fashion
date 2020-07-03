@@ -1,0 +1,261 @@
+.preview {
+  position: relative;
+  width: 100%;
+  background: url("../img/main-overlay.svg");
+  background-repeat: no-repeat;
+  background-position: top 64% left;
+  background-color: $purple;
+  overflow: hidden;
+
+  @include tablet {
+    background-size: 920px 504px, 100% 100%;
+    background-position: top 23% left -12px;
+  }
+
+  @include mobile {
+    min-height: auto;
+    background-size: 400px 219px;
+  }
+}
+
+.preview__wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 305px;
+  padding-left: $padding-left;
+  padding-right: 10px;
+  padding-bottom: 48px;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @include tablet {
+    padding-top: 158px;
+    padding-left: 40px;
+    padding-right: 48px;
+    padding-bottom: 144px;
+  }
+
+  @include mobile {
+    padding: 113px 16px 55px 16px;
+  }
+}
+
+.preview__text-block {
+  flex-grow: 2;
+  position: relative;
+  width: 997px;
+  padding-left: 5.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1;
+
+  @include tablet {
+    width: 680px;
+    padding-left: 0;
+  }
+
+  @include mobile {
+    width: 274px;
+  }
+}
+
+.preview__hashtag {
+  margin-bottom: 25px;
+
+  @include tablet {
+    margin-bottom: 21px;
+  }
+
+  @include mobile {
+    margin-bottom: 11px;
+  }
+}
+
+.preview__text-block h1 {
+  @include title-reset;
+
+  font-family: "Playfair", "Arial", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 72px;
+  line-height: 110%;
+  letter-spacing: 0.04em;
+  display: block;
+  width: 100%;
+  color: $chablis-white;
+  margin-bottom: 71px;
+
+  @include tablet {
+    font-size: 56px;
+    width: 612px;
+    margin-bottom: 75px;
+    letter-spacing: 0.03em;
+  }
+
+  @include mobile {
+    font-weight: 700;
+    width: 276px;
+    font-size: 32px;
+    letter-spacing: 0.03em;
+    margin-bottom: 37px;
+  }
+}
+
+.preview__img {
+  width: 839px;
+  height: 881px;
+  position: absolute;
+  right: 2px;
+  bottom: 0;
+  z-index: 0;
+
+  &::before {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(298.69deg, #332e2e 13.32%, rgba(77, 77, 77, 0) 46.28%);
+    opacity: 0.5;
+    z-index: 2;
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 645px;
+    height: 878px;
+    left: 220px;
+    top: -27px;
+    border: 10px solid $saffron;
+    z-index: 0;
+
+    @include tablet {
+      left: 138px;
+      top: -16px;
+      width: 401px;
+      height: 545px;
+      border: 6.60508px solid $saffron;
+    }
+  }
+
+  @include tablet {
+    width: 491px;
+    height: 548px;
+    position: absolute;
+    right: -43px;
+    bottom: 0;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.preview__img img {
+  position: relative;
+  z-index: 1;
+}
+
+.preview__toggles {
+  position: absolute;
+  bottom: 44px;
+  right: 78px;
+  z-index: 2;
+
+  @include tablet {
+    bottom: 20px;
+    right: 81px;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.preview__info {
+  width: 100%;
+  margin-bottom: 120px;
+
+  @include tablet {
+    width: 288px;
+    margin-bottom: 84px;
+  }
+
+  @include mobile {
+    margin-bottom: 17px;
+  }
+}
+
+.preview__btn {
+  @include link-reset;
+
+  display: block;
+  position: relative;
+  width: 407px;
+  height: 93px;
+  background-color: $white;
+  font-family: "Lato", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.08em;
+  color: $shaft-black;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 35px 133px 10px 10px;
+  transition: color $transition, box-shadow $transition, opacity $transition;
+  margin-bottom: 137px;
+
+  &::after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 107px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $saffron;
+    background-image: url("../img/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: left 28px top 38px;
+    background-size: 51px 18px;
+
+    @include tablet {
+      width: 78px;
+      background-size: 36px 13px;
+      background-position: left 20px top 29px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $saffron;
+    box-shadow: 0 5px 12px rgba(49, 40, 70, 0.12);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @include tablet {
+    width: 274px;
+    height: 68px;
+    padding: 24px 88px 10px 11px;
+    margin-bottom: 10px;
+  }
+}
+
+.preview__social-list {
+  margin-top: auto;
+
+  @include tablet {
+    display: none;
+  }
+}

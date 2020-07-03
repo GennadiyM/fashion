@@ -1,0 +1,154 @@
+.judge {
+  box-sizing: border-box;
+  width: 478px;
+}
+
+.judge__wrapper {
+  position: relative;
+  width: 478px;
+  display: flex;
+
+  @include mobile {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.judge__container {
+  width: 454px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1;
+  padding-top: 382px;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 454px;
+    height: 552px;
+    top: 81px;
+    left: 15px;
+    border: 4px solid rgba(245, 208, 111, 0.54);
+    z-index: -1;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    width: 320px;
+    padding-top: 269px;
+  }
+}
+
+.judge__photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 454px;
+  height: 382px;
+
+  @include mobile {
+    width: 320px;
+    height: 269px;
+  }
+}
+
+.judge__info {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $light-gray;
+  padding: 37px 17px 22px 34px;
+  box-shadow: 10px 10px 24px -14px rgba(0, 0, 0, 0.24);
+
+  @include mobile {
+    position: relative;
+    padding-top: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 39px;
+  }
+}
+
+.judge__top-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+
+  @include mobile {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+}
+
+.judge__top-line h3 {
+  @include title-reset;
+  @include font-h3;
+
+  display: block;
+  width: 70%;
+  margin-bottom: 2px;
+
+  @include mobile {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.judge__top-line p {
+  display: block;
+  font-family: "Lato", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $shaft-black;
+  opacity: 0.32;
+  padding: 2px 0 0 0;
+  margin: 0 19px 0 0;
+}
+
+.judge__description {
+  width: 100%;
+  margin-bottom: 24px;
+
+  @include tablet {
+    margin-bottom: 27px;
+  }
+
+  @include mobile {
+    margin-bottom: 0;
+  }
+}
+
+.judge__description p {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  @include tablet {
+    line-height: 140%;
+  }
+}
+
+.judge__social-list {
+  align-self: flex-end;
+  margin-top: auto;
+
+  @include mobile {
+    position: absolute;
+    right: 8px;
+    bottom: 18px;
+  }
+}

@@ -1,0 +1,144 @@
+.toggles {
+  width: 42px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &--model {
+    width: 38px;
+  }
+}
+
+.toggles__arrow {
+  @include button-reset;
+
+  position: relative;
+  width: 10px;
+  height: 20px;
+  overflow: hidden;
+  transition: width $fast-transition, height $fast-transition;
+
+  &::after {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 50%;
+    width: 28px;
+    height: 28px;
+    background-color: transparent;
+    border: 0.909091px solid transparent;
+    transition: border $fast-transition;
+  }
+
+  &--left {
+    &::after {
+      left: 6px;
+      transform: translateY(-50%) rotate(-45deg);
+      border-top: 0.909091px solid $white;
+      border-left: 0.909091px solid $white;
+    }
+
+    &:hover::after {
+      border-left: 0.909091px solid $saffron;
+
+      @include tablet {
+        border-left: 0.909091px solid $white;
+      }
+    }
+  }
+
+  &--right {
+    &::after {
+      right: 6px;
+      transform: translateY(-50%) rotate(45deg);
+      border-top: 0.909091px solid $white;
+      border-right: 0.909091px solid $white;
+    }
+
+    &:hover::after {
+      border-right: 0.909091px solid $saffron;
+
+      @include tablet {
+        border-right: 0.909091px solid $white;
+      }
+    }
+  }
+
+  &:hover {
+    width: 14px;
+    height: 28px;
+
+    @include tablet {
+      width: 10px;
+      height: 20px;
+    }
+  }
+
+  &:hover::after {
+    border-top: 0.909091px solid $saffron;
+
+    @include tablet {
+      border-top: 0.909091px solid $white;
+    }
+  }
+}
+
+.toggles--model .toggles__arrow {
+  width: 13px;
+  height: 22px;
+  opacity: 0.16;
+  transition: opacity $fast-transition, width $fast-transition, height $fast-transition;
+
+  &::after {
+    border-top: 2px solid $shaft-black;
+  }
+
+  &:hover {
+    opacity: 1;
+    width: 17px;
+    height: 30px;
+
+    @include tablet {
+      width: 13px;
+      height: 22px;
+      opacity: 0.16;
+    }
+  }
+
+  &--left {
+    &::after {
+      border-left: 2px solid $shaft-black;
+    }
+
+    &:hover::after {
+      border-left: 2px solid $saffron;
+
+      @include tablet {
+        border-left: 2px solid $shaft-black;
+      }
+    }
+  }
+
+  &--right {
+    &::after {
+      border-right: 2px solid $shaft-black;
+    }
+
+    &:hover::after {
+      border-right: 2px solid $saffron;
+
+      @include tablet {
+        border-right: 2px solid $shaft-black;
+      }
+    }
+  }
+
+  &:hover::after {
+    border-top: 2px solid $saffron;
+
+    @include tablet {
+      border-top: 2px solid $shaft-black;
+    }
+  }
+}

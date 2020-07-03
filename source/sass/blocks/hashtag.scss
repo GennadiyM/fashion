@@ -1,0 +1,23 @@
+.hashtag {
+  @include link-reset;
+
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: $hashtag-saffron;
+  opacity: 0.87;
+
+  &--preview {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+  }
+
+  @include mobile {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+  }
+}

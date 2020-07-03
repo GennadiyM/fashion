@@ -1,0 +1,242 @@
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100vw, -50%);
+  width: 880px;
+  background-color: $white;
+  z-index: 6;
+  padding: 48px 73px 47px 40px;
+  display: none;
+  min-height: 704px;
+  transform-origin: center;
+
+  @include tablet {
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transform: translateX(-100%);
+    transition: transform $transition;
+    padding-top: 156px;
+    overflow-y: scroll;
+  }
+
+  @include mobile {
+    padding: 112px 16px 130px 16px;
+  }
+
+  &--open {
+    display: block;
+    animation: show $transition;
+    animation-fill-mode: forwards;
+
+    @include tablet {
+      animation: none;
+      transform: none;
+    }
+  }
+
+  &--submit {
+    min-height: 483px;
+
+    @include tablet {
+      min-height: 100vh;
+      width: 100%;
+    }
+  }
+}
+
+
+.popup--contacts.popup--open {
+  animation: none;
+  transform: none;
+
+  @include desktop-lg {
+    animation: show $transition;
+    animation-fill-mode: forwards;
+
+    @include tablet {
+      animation: none;
+      transform: none;
+    }
+  }
+}
+
+.popup--contacts.popup--submit {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50, -50%);
+  width: 880px;
+  background-color: $white;
+  z-index: 6;
+  padding: 48px 73px 47px 40px;
+  min-height: 483px;
+  transform-origin: center;
+  animation: show $transition;
+  animation-fill-mode: forwards;
+}
+
+
+.popup__logo {
+  display: none;
+
+  @include tablet {
+    position: absolute;
+    top: 0;
+    left: 24px;
+    width: 138px;
+    height: 92px;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include mobile {
+    width: 108px;
+    height: 72px;
+    left: 0;
+  }
+}
+
+.popup__logo img {
+  max-width: 77%;
+}
+
+.popup--submit .popup__open-container {
+  display: none;
+}
+
+.popup__thanks {
+  display: none;
+  position: relative;
+  padding-top: 96px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: $purple;
+    background-image: url("../img/mark-big.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.popup--submit .popup__thanks {
+  display: block;
+}
+
+.popup__title {
+  width: 685px;
+  margin: 0 0 18px 0;
+
+  @include tablet {
+    width: 545px;
+    margin-bottom: 48px;
+  }
+
+  @include mobile {
+    width: 100%;
+    margin-bottom: 42px;
+    min-height: 112px;
+  }
+}
+
+.popup--contacts .popup__title {
+  margin-bottom: 47px;
+  width: 100%;
+}
+
+.popup__thanks .popup__title {
+  margin-bottom: 48px;
+}
+
+.popup__title p {
+  display: block;
+  font-size: 40px;
+  line-height: 48px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.01em;
+
+  @include tablet {
+    font-size: 32px;
+    line-height: 120%;
+  }
+
+  @include mobile {
+    font-size: 24px;
+    line-height: 120%;
+  }
+}
+
+.popup__close {
+  @include button-reset;
+
+  position: absolute;
+  right: 51px;
+  top: 51px;
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: $purple;
+    border-radius: 3px;
+    transition: background $transition, opacity $transition;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover::before,
+  &:hover::after {
+    background-color: $saffron;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @include tablet {
+    top: 43px;
+  }
+
+  @include mobile {
+    top: 25px;
+    right: 27px;
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
